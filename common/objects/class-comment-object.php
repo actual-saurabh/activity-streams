@@ -33,7 +33,13 @@ abstract class Comment_Object extends Common\WP_Object {
 	}
 
 	protected function create( $args ) {
-
+		$inserted = wp_insert_comment( $args );
+		if ( ! $inserted ) {
+			return new WP_Error( 'comment-insert-failed', __( "Couldn't insert Comment", 'activity-streams' ) );
+		}
+		if ( is_int( $inserted ) ) {
+			return $inserted;
+		}
 	}
 
 	protected function destroy() {
