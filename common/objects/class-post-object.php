@@ -33,7 +33,8 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	protected function create( $args ) {
-
+		$inserted = wp_insert_post( $args, $wp_error = false, $fire_after_hooks = true );
+		return $inserted;
 	}
 
 	protected function destroy() {
