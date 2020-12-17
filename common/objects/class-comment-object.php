@@ -47,7 +47,13 @@ abstract class Comment_Object extends Common\WP_Object {
 	}
 
 	protected function update( $args ) {
-
+		$updated = wp_update_comment( $args );
+		if ( ! $updated ) {
+			return new WP_Error( 'comment-update-failed', __( "Couldn't update Comment", 'activity-streams' ) );
+		}
+		if ( is_int( $updated ) ) {
+			return $updated;
+		}
 	}
 
 }
