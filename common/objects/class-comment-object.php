@@ -42,8 +42,13 @@ abstract class Comment_Object extends Common\WP_Object {
 		}
 	}
 
-	protected function destroy() {
-
+	protected function destroy( $id ) {
+		$deleted = wp_delete_comment( $id );
+		if ( ! $deleted ) {
+			return new WP_Error( 'comment-delete-failed', __( "Couldn't delete Comment", 'activity-streams' ) );
+		} else {
+			return $deleted;
+		}
 	}
 
 	protected function update( $args ) {
