@@ -48,7 +48,8 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	protected function update( $args ) {
-
+		$update = wp_update_post( $args, $wp_error = true, $fire_after_hooks = true );
+		return $update;
 	}
 
 }
