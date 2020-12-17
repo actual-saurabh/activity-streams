@@ -38,7 +38,13 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	protected function destroy() {
-
+		$destroy = wp_delete_post( $id, $force_delete = false );
+		if ( 0 === $destroy || is_null( $delete ) ) {
+			return new WP_Error( 'post-delete-failed', __( "Couldn't delete post", 'activity-streams' ) );
+		}
+		if ( $destroy instanceof WP_Post ) {
+			return $destroy;
+		}
 	}
 
 	protected function update( $args ) {
