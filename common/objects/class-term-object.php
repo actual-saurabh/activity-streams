@@ -32,8 +32,9 @@ abstract class Term_Object extends Common\WP_Object {
 
 	}
 
-	protected function create( $args ) {
-
+	protected function create( $term, $taxanomy, $args ) {
+		$inserted = wp_insert_term( $term, $taxonomy, $args );
+		return $inserted;
 	}
 
 	protected function destroy() {
