@@ -18,7 +18,13 @@ use \Bodh\Activity_Streams\Common as Common;
  * @since 1.0.0
  */
 abstract class Comment_Object extends Common\WP_Object {
-
+	/**
+	 * Method init_object
+	 *
+	 * @param int $id accpets ID of the object.
+	 *
+	 * @return void
+	 */
 	protected function init_object( $id ) {
 
 		// add error handling here.
@@ -32,6 +38,13 @@ abstract class Comment_Object extends Common\WP_Object {
 
 	}
 
+	/**
+	 * Method create
+	 *
+	 * @param array $args accepts variables required for the comment object as array.
+	 *
+	 * @return int|WP_Error returns ID of comment or an error.
+	 */
 	protected function create( $args ) {
 		$inserted = wp_insert_comment( $args );
 		if ( ! $inserted ) {
@@ -42,6 +55,13 @@ abstract class Comment_Object extends Common\WP_Object {
 		}
 	}
 
+	/**
+	 * Method destroy
+	 *
+	 * @param int $id requires ID of comment.
+	 *
+	 * @return int|WP_Error returns ID of the deleted post orthrows an error.
+	 */
 	protected function destroy( $id ) {
 		$deleted = wp_delete_comment( $id );
 		if ( ! $deleted ) {
@@ -51,6 +71,13 @@ abstract class Comment_Object extends Common\WP_Object {
 		}
 	}
 
+	/**
+	 * Method update
+	 *
+	 * @param array $args accepts variables required for the comment object as array.
+	 *
+	 * @return int|WP_Error returns ID of the deleted post orthrows an error.
+	 */
 	protected function update( $args ) {
 		$updated = wp_update_comment( $args );
 		if ( ! $updated ) {
