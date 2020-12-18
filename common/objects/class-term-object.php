@@ -51,7 +51,8 @@ abstract class Term_Object extends Common\WP_Object {
 	}
 
 	protected function update( $args ) {
-
+		$updated = wp_update_term( $id, $taxonomy, $args );
+		return $updated;
 	}
 
 }
