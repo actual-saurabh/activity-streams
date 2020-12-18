@@ -19,6 +19,13 @@ use \Bodh\Activity_Streams\Common as Common;
  */
 abstract class Term_Object extends Common\WP_Object {
 
+	/**
+	 * Method init_object
+	 *
+	 * @param int $id ID of the term.
+	 *
+	 * @return void
+	 */
 	protected function init_object( $id ) {
 
 		// add error handling here.
@@ -32,11 +39,29 @@ abstract class Term_Object extends Common\WP_Object {
 
 	}
 
+	/**
+	 * Method create
+	 *
+	 * @param string       $term        (Required) The term name to add.
+	 * @param string       $taxanomy    (Required) The taxonomy to which to add the term.
+	 * @param array|string $args        (Optional) Array or query string of arguments for inserting a term.
+	 *
+	 * @return array|WP_Error An array containing the term_id and term_taxonomy_id, WP_Error otherwise.
+	 */
 	protected function create( $term, $taxanomy, $args ) {
 		$inserted = wp_insert_term( $term, $taxonomy, $args );
 		return $inserted;
 	}
 
+	/**
+	 * Method destroy
+	 *
+	 * @param string       $term        (Required) The term name to add.
+	 * @param string       $taxanomy    (Required) The taxonomy to which to add the term.
+	 * @param array|string $args        (Optional) Array or query string of arguments for inserting a term.
+	 *
+	 * @return bool|WP_Error  True on success. WP_Error if term does not exist or if the taxonomy does not exist or on attempted deletion of default Category.
+	 */
 	protected function destroy( $term, $taxanomy, $args ) {
 		$destroy = wp_delete_term( $term, $taxonomy, $args );
 		if ( ! $destroy ) {
