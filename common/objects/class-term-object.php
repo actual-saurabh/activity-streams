@@ -37,8 +37,17 @@ abstract class Term_Object extends Common\WP_Object {
 		return $inserted;
 	}
 
-	protected function destroy() {
-
+	protected function destroy( $term, $taxanomy, $args ) {
+		$destroy = wp_delete_term( $term, $taxonomy, $args );
+		if ( ! $destroy ) {
+			return new WP_Error( 'term-delete-failed', __( "Couldn't delete term because term not found", 'activity-streams' ) );
+		}
+		if ( 0 === $destroy ) {
+			return new WP_Error( 'term-delete-failed', __( "Couldn't delete term because you attempted to delete a default category", 'activity-streams' ) );
+		}
+		if ( is_wp_error( $destroy ) || true === $destroy ) {
+			return $destroy;
+		}
 	}
 
 	protected function update( $args ) {
