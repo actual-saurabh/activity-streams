@@ -5,7 +5,7 @@
  * @since 1.0.0
  * @version 1.0.0
  *
- * @package Bodh/Activity_Streams/Common
+ * @package activity_streams/common/objects
  */
 
 namespace \Bodh\Activity_Streams\Common\Objects;
