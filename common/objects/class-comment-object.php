@@ -19,7 +19,7 @@ use \Bodh\Activity_Streams\Common as Common;
  */
 abstract class Comment_Object extends Common\WP_Object {
 	/**
-	 * Method init_object
+	 * Method init_object initiates the comment object.
 	 *
 	 * @param int $id accpets ID of the object.
 	 *
@@ -39,7 +39,7 @@ abstract class Comment_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method create
+	 * Method create adds the comment object in the database.
 	 *
 	 * @param array $args accepts variables required for the comment object as array.
 	 *
@@ -56,7 +56,7 @@ abstract class Comment_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method destroy
+	 * Method destroy deletes the comment object from the database.
 	 *
 	 * @param int $id requires ID of comment.
 	 *
@@ -72,7 +72,7 @@ abstract class Comment_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method update
+	 * Method update updates the comment object in the database.
 	 *
 	 * @param array $args accepts variables required for the comment object as array.
 	 *
