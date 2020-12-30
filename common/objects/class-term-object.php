@@ -20,7 +20,7 @@ use \Bodh\Activity_Streams\Common as Common;
 abstract class Term_Object extends Common\WP_Object {
 
 	/**
-	 * Method init_object
+	 * Method init_object initiates the term object.
 	 *
 	 * @param int $id ID of the term.
 	 *
@@ -40,7 +40,7 @@ abstract class Term_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method create
+	 * Method create adds the term object to the database.
 	 *
 	 * @param string       $term        (Required) The term name to add.
 	 * @param string       $taxanomy    (Required) The taxonomy to which to add the term.
@@ -54,7 +54,7 @@ abstract class Term_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method destroy
+	 * Method destroy deletes the term object from the database.
 	 *
 	 * @param string       $term        (Required) The term name to add.
 	 * @param string       $taxanomy    (Required) The taxonomy to which to add the term.
@@ -75,6 +75,13 @@ abstract class Term_Object extends Common\WP_Object {
 		}
 	}
 
+	/**
+	 * Method update udpates the term object in the database.
+	 *
+	 * @param array $args Array or query string of arguments for inserting a term.
+	 *
+	 * @return array|WP_Error An array containing the term_id and term_taxonomy_id, WP_Error otherwise.
+	 */
 	protected function update( $args ) {
 		$updated = wp_update_term( $id, $taxonomy, $args );
 		return $updated;
