@@ -20,7 +20,7 @@ use \Bodh\Activity_Streams\Common as Common;
 abstract class Post_Object extends Common\WP_Object {
 
 	/**
-	 * Method init_object
+	 * Method init_object initiates the post object.
 	 *
 	 * @param int $id accepts ID of the object to be initiated.
 	 *
@@ -40,7 +40,7 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method create
+	 * Method create adds the post object in the database.
 	 *
 	 * @param array $args An array of elements that make up a post to update or insert.
 	 *
@@ -52,7 +52,7 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method destroy
+	 * Method destroy deletes the post object from the database.
 	 *
 	 * @param int  $id           Post ID. Default 0.
 	 * @param bool $force_delete Whether to bypass Trash and force deletion.
@@ -70,7 +70,7 @@ abstract class Post_Object extends Common\WP_Object {
 	}
 
 	/**
-	 * Method update
+	 * Method update updates the post object in the database.
 	 *
 	 * @param array $args Post data. Arrays are expected to be escaped, objects are not. See wp_insert_post() for accepted arguments. Default array.
 	 *
