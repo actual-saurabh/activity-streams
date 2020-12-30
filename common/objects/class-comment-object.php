@@ -24,6 +24,8 @@ abstract class Comment_Object extends Common\WP_Object {
 	 * @param int $id accpets ID of the object.
 	 *
 	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	protected function init_object( $id ) {
 
@@ -44,6 +46,8 @@ abstract class Comment_Object extends Common\WP_Object {
 	 * @param array $args accepts variables required for the comment object as array.
 	 *
 	 * @return int|WP_Error returns ID of comment or an error.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function create( $args ) {
 		$inserted = wp_insert_comment( $args );
@@ -61,6 +65,8 @@ abstract class Comment_Object extends Common\WP_Object {
 	 * @param int $id requires ID of comment.
 	 *
 	 * @return int|WP_Error returns ID of the deleted post orthrows an error.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function destroy( $id ) {
 		$deleted = wp_delete_comment( $id );
@@ -77,6 +83,8 @@ abstract class Comment_Object extends Common\WP_Object {
 	 * @param array $args accepts variables required for the comment object as array.
 	 *
 	 * @return int|WP_Error returns ID of the deleted post orthrows an error.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function update( $args ) {
 		$updated = wp_update_comment( $args );

@@ -45,6 +45,8 @@ abstract class Post_Object extends Common\WP_Object {
 	 * @param array $args An array of elements that make up a post to update or insert.
 	 *
 	 * @return int|WP_Error The post ID on success. The value 0 or WP_Error on failure.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function create( $args ) {
 		$inserted = wp_insert_post( $args, $wp_error = false, $fire_after_hooks = true );
@@ -58,6 +60,8 @@ abstract class Post_Object extends Common\WP_Object {
 	 * @param bool $force_delete Whether to bypass Trash and force deletion.
 	 *
 	 * @return WP_Post|WP_Error Post data on success, false or null on failure.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function destroy( $id, $force_delete ) {
 		$destroy = wp_delete_post( $id, $force_delete );
@@ -75,6 +79,8 @@ abstract class Post_Object extends Common\WP_Object {
 	 * @param array $args Post data. Arrays are expected to be escaped, objects are not. See wp_insert_post() for accepted arguments. Default array.
 	 *
 	 * @return int|WP_Error The post ID on success. WP_Error on failure.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function update( $args ) {
 		$update = wp_update_post( $args, $wp_error = true, $fire_after_hooks = true );

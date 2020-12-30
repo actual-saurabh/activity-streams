@@ -25,6 +25,8 @@ abstract class Term_Object extends Common\WP_Object {
 	 * @param int $id ID of the term.
 	 *
 	 * @return void
+	 *
+	 * @since 1.0.0
 	 */
 	protected function init_object( $id ) {
 
@@ -47,6 +49,8 @@ abstract class Term_Object extends Common\WP_Object {
 	 * @param array|string $args        (Optional) Array or query string of arguments for inserting a term.
 	 *
 	 * @return array|WP_Error An array containing the term_id and term_taxonomy_id, WP_Error otherwise.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function create( $term, $taxanomy, $args ) {
 		$inserted = wp_insert_term( $term, $taxonomy, $args );
@@ -61,6 +65,8 @@ abstract class Term_Object extends Common\WP_Object {
 	 * @param array|string $args        (Optional) Array or query string of arguments for inserting a term.
 	 *
 	 * @return bool|WP_Error  True on success. WP_Error if term does not exist or if the taxonomy does not exist or on attempted deletion of default Category.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function destroy( $term, $taxanomy, $args ) {
 		$destroy = wp_delete_term( $term, $taxonomy, $args );
@@ -81,6 +87,8 @@ abstract class Term_Object extends Common\WP_Object {
 	 * @param array $args Array or query string of arguments for inserting a term.
 	 *
 	 * @return array|WP_Error An array containing the term_id and term_taxonomy_id, WP_Error otherwise.
+	 *
+	 * @since 1.0.0
 	 */
 	protected function update( $args ) {
 		$updated = wp_update_term( $id, $taxonomy, $args );
