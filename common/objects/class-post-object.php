@@ -2,6 +2,8 @@
 /**
  * Contains recordable behaviour.
  *
+ * The post object will be used to create different types of Journey, Plan, Path and Step.
+ *
  * @since 1.0.0
  * @version 1.0.0
  *

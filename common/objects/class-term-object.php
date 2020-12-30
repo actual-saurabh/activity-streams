@@ -2,6 +2,8 @@
 /**
  * Contains recordable behaviour.
  *
+ * The term object will be used to store verbs as part of the activity stream.
+ *
  * @since 1.0.0
  * @version 1.0.0
  *

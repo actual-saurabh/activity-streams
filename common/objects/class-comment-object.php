@@ -2,6 +2,8 @@
 /**
  * Contains recordable behaviour.
  *
+ * The comment object will be used to track all activities in the <doer> <verb> <object> format.
+ *
  * @since 1.0.0
  * @version 1.0.0
  *
