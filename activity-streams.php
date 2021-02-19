@@ -2,7 +2,7 @@
 /**
  * Activity Streams
  *
- * @package           Bodh
+ * @package           Bodh/Activity_Streams
  * @author            Saurabh, Parth
  * @copyright         none
  * @license           MIT
