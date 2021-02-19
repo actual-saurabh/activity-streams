@@ -15,7 +15,7 @@
  * Requires at least: 5.2
  * Requires PHP:      7.4.3
  * Author:            Saurabh, Parth
- * Author URI:        https://github.com/actual-saurabh, https://github.com/parth-gohil
+ * Author URI:        https://github.com/actual-saurabh
  * Text Domain:       activity-streams
  * License:           MIT
  * License URI:       https://opensource.org/licenses/MIT
